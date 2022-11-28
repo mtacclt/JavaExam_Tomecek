@@ -5,22 +5,23 @@ public class TwoPoints {
         System.out.println(computePointOfInterception(2, 4));
     }
 
-    public static int computePointOfInterception(int x, int
-            y) {
-        int speed = 1;
+    public static int computePointOfInterception(int x, int y) {
+        return pointOfInterceptionWithFactors(x,y,12,1);
+    }
+
+    public static int pointOfInterceptionWithFactors(int x,int y,int circleSize,int speed){
         while (x != y) {
-            if (x + speed <= 12) {
+            if (x + speed <= circleSize) {
                 x = x + speed;
             } else {
-                x = x - 12 + speed;
+                x = x - circleSize + speed;
             }
 
-            if (y + speed * 2 <= 12){
+            if (y + speed * 2 <= circleSize){
                 y = y + speed*2;
             }else{
-                y = (y - 12 + speed*2);
+                y = y - circleSize + speed*2;
             }
-
         }
         return x;
     }
