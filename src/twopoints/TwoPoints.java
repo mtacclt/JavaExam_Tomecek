@@ -12,15 +12,15 @@ public class TwoPoints {
     public static int pointOfInterceptionWithFactors(int x,int y,int circleSize,int speed){
         while (x != y) {
             if (x + speed <= circleSize) {
-                x = x + speed;
+                x = x + speed*2;
             } else {
-                x = x - circleSize + speed;
+                x = x - circleSize + speed*2;
             }
 
             if (y + speed * 2 <= circleSize){
-                y = y + speed*2;
+                y = y + speed;
             }else{
-                y = y - circleSize + speed*2;
+                y = y - circleSize + speed;
             }
         }
         return x;
